@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import { Button } from "@/components/ui/button"
 
 function App() {
 
   return (
     <main>
-    Hello world
+      <Button> Hello </Button>
     </main>
   )
 }
