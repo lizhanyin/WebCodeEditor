@@ -10,8 +10,9 @@ export function EditorComponent({ value, setValue, language, editorRef }){
   return(
     <>
       <Editor
-        height="80vh"
-        theme={theme === "dark" ? "vs-dark" : "vs-light"}
+        className="rounded-md my-2"
+        height="90vh"
+        theme={(theme === "dark" || theme === "system") ? "vs-dark" : "vs-light"}
         onMount={onMount}
         value={value}
         onChange={(value) => setValue(value)}
