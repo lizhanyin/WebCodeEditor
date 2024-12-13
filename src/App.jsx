@@ -21,7 +21,7 @@ function App() {
   }, []);
   return (
     <main className="min-h-full p-3 gap-1 flex flex-col">
-      <section className="w-full my-2 px-2 flex justify-between items-center gap-2">
+      <section className="w-full my-2 flex justify-between items-center gap-2">
         <LanguageSelect language={language} setLanguage={setLanguage} languageList={languageList} setValue={setValue} codeSnippets={codeSnippets} />
         <ModeToggle />
       </section>
