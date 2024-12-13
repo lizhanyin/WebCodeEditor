@@ -10,9 +10,9 @@ import { fetchRuntimes } from "@/utils/fetch-runtimes";
 
 function App() {
   const editorRef = useRef();
-  const [ value, setValue ] = useState(codeSnippets["javascript"]);
+  const [ value, setValue ] = useState(codeSnippets[localStorage.getItem("language") || "javascript"]);
   
-  const [ language, setLanguage ] = useState("javascript");
+  const [ language, setLanguage ] = useState(localStorage.getItem("language") || "javascript");
   
   const [ languageList, setLanguageList ] = useState([]);
   

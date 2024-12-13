@@ -6,8 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 
 createRoot(document.getElementById('root')).render(
   <ThemeProvider 
-  defaultTheme="system" 
-  storageKey="vite-ui-theme">
+    defaultTheme="dark" 
+    storageKey="vite-ui-theme">
     <App />
     <Toaster />
   </ThemeProvider>

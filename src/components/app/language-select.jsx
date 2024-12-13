@@ -14,7 +14,10 @@ export function LanguageSelect({ language, setLanguage, languageList, setValue, 
     }
   }, [language]);
   return (
-    <Select defaultValue={language} onValueChange={(value) => setLanguage(value)}>
+    <Select defaultValue={language} onValueChange={(value) => {
+      setLanguage(value)
+      localStorage.setItem("language", value);
+    }}>
       <SelectTrigger>
         <SelectValue placeholder={language.toUpperCase() || "JAVASCRIPT"}/>
       </SelectTrigger>
