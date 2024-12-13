@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: "/webcodeeditor/",
+  base: "/WebCodeEditor/",
   plugins: [react(),
   VitePWA({
   registerType: 'autoUpdate',
@@ -14,7 +14,7 @@ export default defineConfig({
     description: 'A web code editor powered by monaco editor (same editor powering vscode) with code execution feature for languages ranging from javascript, lua, python, typescript and many more',
     background_color: 'black',
     display: 'standalone',
-    start_url: '/webcodeeditor',
+    start_url: '/WebCodeEditor',
     scope: '/',
     orientation: 'portrait',
     theme_color: '#000000',
