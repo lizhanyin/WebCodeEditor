@@ -4,17 +4,18 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export function LanguageSelect({ language, setLanguage, languageList }) {
+  
   return (
-    <Select defaultValue={language} onValueChange={(value) => setLanguage(value)}>
-      <SelectTrigger asChild>
-        <SelectValue placeholder={language} />
+    <Select onValueChange={(value) => setLanguage(value)}>
+      <SelectTrigger>
+        <SelectValue placeholder={language.toUpperCase() || "JAVASCRIPT"}/>
       </SelectTrigger>
       <SelectContent>
-        {languageList.map( x => 
-        <SelectItem value={x.language} >{x.language} {x.version}</SelectItem>)}
+        {languageList.map(x => 
+        <SelectItem value={x.language} >{x.language.toUpperCase()} {x.version}</SelectItem>)}
       </SelectContent>
     </Select>
   )

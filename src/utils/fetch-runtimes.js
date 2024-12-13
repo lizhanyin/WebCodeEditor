@@ -9,7 +9,7 @@ export const fetchRuntimes = async (supportedLanguages, setData) => {
         language: x.language,
         version: x.version
       }
-    }
-  });
+    } else return null;
+  }).filter(x => x != null);
   setData(result);
 }
