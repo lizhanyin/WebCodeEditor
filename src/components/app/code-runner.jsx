@@ -39,7 +39,7 @@ export function CodeRunner({ language, version, data }){
         <CardDescription>Code Output</CardDescription>
       </CardHeader>
       <CardContent>
-        {error ? <div className="text-md text-red-700 font-bold font-mono">{result.output}</div> : <div className="text-md font-bold font-mono">{result.output}</div>}
+        {result ? error ? <div className="text-md text-red-700 font-bold font-mono break-words  whitespace-pre-wrap">{result.output}</div> : <div className="text-md font-bold font-mono break-words  whitespace-pre-wrap">{result.output}</div> : <p className="text-md font-bold animate-pulse text-green-500">Executing...</p>}
       </CardContent>
       <CardFooter>
         <p>Version: {version}</p>
