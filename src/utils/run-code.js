@@ -12,6 +12,7 @@ export const runCode = async (language, version, content, setData) => {
     const data = res.data;
     setData(data.run);
   } catch(err) {
+    console.log(err.message);
     return {
       error: true,
       content: err.message

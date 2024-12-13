@@ -9,13 +9,13 @@ import {
 export function LanguageSelect({ language, setLanguage, languageList }) {
   
   return (
-    <Select onValueChange={(value) => setLanguage(value)}>
+    <Select defaultValue={language} onValueChange={(value) => setLanguage(value)}>
       <SelectTrigger>
         <SelectValue placeholder={language.toUpperCase() || "JAVASCRIPT"}/>
       </SelectTrigger>
       <SelectContent>
-        {languageList.map(x => 
-        <SelectItem value={x.language} >{x.language.toUpperCase()} {x.version}</SelectItem>)}
+    {languageList.map((x, i) => 
+        <SelectItem key={i} value={x.language} >{x.language.toUpperCase()} {x.version}</SelectItem>)}
       </SelectContent>
     </Select>
   )

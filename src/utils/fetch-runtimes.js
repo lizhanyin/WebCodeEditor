@@ -5,6 +5,7 @@ export const fetchRuntimes = async (supportedLanguages, setData) => {
   const data = res.data;
   let result = data.map(x => {
     if (supportedLanguages.includes(x.language.toLowerCase())) {
+      if(x.version === "1.32.3"&&x.language === "javascript") return null;
       return {
         language: x.language,
         version: x.version

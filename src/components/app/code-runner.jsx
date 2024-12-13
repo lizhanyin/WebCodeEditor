@@ -12,7 +12,7 @@ import {
 
 export function CodeRunner({ language, version, data }){
   const [ error, setError ] = useState(false);
-  const [ result, setResult ] = useState();
+  const [ result, setResult ] = useState("");
   const { toast } = useToast();
   
   useEffect(() => {

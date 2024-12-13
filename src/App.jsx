@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { EditorComponent } from "@/components/app/editor";
 import { LanguageSelect } from "@/components/app/language-select";
+import { CodeRunner } from "@/components/app/code-runner";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModeToggle } from "@/components/mode-toggle";
 import { supportedLanguages } from "@/utils/monaco-supported-languages";
@@ -32,7 +33,7 @@ function App() {
           <EditorComponent value={value} setValue={setValue} editorRef={editorRef} language={language}/>
         </TabsContent>
         <TabsContent value="output">
-        la
+        <CodeRunner data={value} language={language} version={languageList.find(x => x.language === language)?.version || ""} />
         </TabsContent>
       </Tabs>
     </main>
