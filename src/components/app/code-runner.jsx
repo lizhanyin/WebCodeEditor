@@ -33,7 +33,7 @@ export function CodeRunner({ language, version, data }){
   }, [result]);
   
   return(
-    <Card className="max-h-[75vh]">
+    <Card className="min-h-[75vh]">
       <CardHeader>
         <CardTitle>{language.toUpperCase()}</CardTitle>
         <CardDescription>Code Output</CardDescription>
