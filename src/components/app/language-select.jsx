@@ -10,7 +10,7 @@ import { useEffect } from "react";
 export function LanguageSelect({ language, setLanguage, languageList, setValue, codeSnippets }) {
   useEffect(() => {
     if(language){
-      setValue(codeSnippets[language] || "");
+      setValue(localStorage.getItem(language) || codeSnippets[language] || "");
     }
   }, [language]);
   return (

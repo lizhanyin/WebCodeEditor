@@ -17,7 +17,7 @@ export function EditorComponent({ value, setValue, language, editorRef }){
         value={value}
         onChange={(value) => {
           setValue(value)
-          localStorage.setItem("value", value);
+          localStorage.setItem(language, value);
         }}
         language={language}
       />
