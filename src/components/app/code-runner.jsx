@@ -33,12 +33,12 @@ export function CodeRunner({ language, version, data }){
   }, [result]);
   
   return(
-    <Card className="max-h-[75vh] overflow-hidden overflow-y-scroll scrollbar">
+    <Card className="max-h-[75vh]">
       <CardHeader>
         <CardTitle>{language.toUpperCase()}</CardTitle>
         <CardDescription>Code Output</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="overflow-hidden overflow-y-scroll scrollbar h-full">
         {result ? error ? <div className="text-md text-red-700 font-bold font-mono break-words  whitespace-pre-wrap">{result.output}</div> : <div className="text-md font-bold font-mono break-words  whitespace-pre-wrap">{result.output}</div> : <p className="text-md font-bold animate-pulse text-green-500">Executing...</p>}
       </CardContent>
       <CardFooter>
