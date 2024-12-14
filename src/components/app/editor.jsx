@@ -15,7 +15,10 @@ export function EditorComponent({ value, setValue, language, editorRef }){
         theme={(theme === "dark" || theme === "system") ? "vs-dark" : "light"}
         onMount={onMount}
         value={value}
-        onChange={(value) => setValue(value)}
+        onChange={(value) => {
+          setValue(value)
+          localStorage.setItem("value", value);
+        }}
         language={language}
       />
     </>

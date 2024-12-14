@@ -33,7 +33,7 @@ export function CodeRunner({ language, version, data }){
   }, [result]);
   
   return(
-    <Card className="max-h-[75vh]">
+    <Card className="max-h-[75vh] overflow-hidden overflow-y-scroll scrollbar">
       <CardHeader>
         <CardTitle>{language.toUpperCase()}</CardTitle>
         <CardDescription>Code Output</CardDescription>
