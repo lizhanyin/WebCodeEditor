@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .codegpt
+
+# package lock file
+package-lock.json
