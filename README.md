@@ -1,5 +1,11 @@
 # React + Vite
 
+2025-01-04: Update dependencies
+
+- React: 9
+- @monaco-editor/react: 4.7.0-rc.0
+- ... ...
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

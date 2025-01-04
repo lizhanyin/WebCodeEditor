@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import PropTypes from 'prop-types';
 import {
   Select,
   SelectContent,
@@ -5,14 +7,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useEffect } from "react";
 
 export function LanguageSelect({ language, setLanguage, languageList, setValue, codeSnippets }) {
   useEffect(() => {
     if(language){
       setValue(localStorage.getItem(language) || codeSnippets[language] || "");
     }
-  }, [language]);
+  }, [language, codeSnippets, setValue]);
+  
   return (
     <Select defaultValue={language} onValueChange={(value) => {
       setLanguage(value)
@@ -28,3 +30,14 @@ export function LanguageSelect({ language, setLanguage, languageList, setValue, 
     </Select>
   )
 }
+
+LanguageSelect.propTypes = {
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired,
+  languageList: PropTypes.arrayOf(PropTypes.shape({
+    language: PropTypes.string.isRequired,
+    version: PropTypes.string.isRequired,
+  })).isRequired,
+  setValue: PropTypes.func.isRequired,
+  codeSnippets: PropTypes.object.isRequired,
+};

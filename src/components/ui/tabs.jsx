@@ -1,11 +1,10 @@
-import * as React from "react"
+import PropTypes from 'prop-types';
 import * as TabsPrimitive from "@radix-ui/react-tabs"
-
 import { cn } from "@/lib/utils"
 
 const Tabs = TabsPrimitive.Root
 
-const TabsList = React.forwardRef(({ className, ...props }, ref) => (
+const TabsList = ({ className, ref, ...props }) => (
   <TabsPrimitive.List
     ref={ref}
     className={cn(
@@ -13,10 +12,10 @@ const TabsList = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
-))
+);
 TabsList.displayName = TabsPrimitive.List.displayName
 
-const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
+const TabsTrigger = ({ className, ref, ...props }) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -24,10 +23,10 @@ const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
-))
+);
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
-const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
+const TabsContent = ({ className, ref, ...props }) => (
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
@@ -35,7 +34,31 @@ const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
-))
+);
 TabsContent.displayName = TabsPrimitive.Content.displayName
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }
+
+TabsList.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+TabsTrigger.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+TabsContent.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};

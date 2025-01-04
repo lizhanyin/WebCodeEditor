@@ -1,4 +1,4 @@
-import * as React from "react"
+import PropTypes from 'prop-types';
 import { Slot } from "@radix-ui/react-slot"
 import { cva } from "class-variance-authority";
 
@@ -34,7 +34,7 @@ const buttonVariants = cva(
   }
 )
 
-const Button = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+const Button = ({ className, variant, size, asChild = false, ref, ...props }) => {
   const Comp = asChild ? Slot : "button"
   return (
     (<Comp
@@ -42,7 +42,17 @@ const Button = React.forwardRef(({ className, variant, size, asChild = false, ..
       ref={ref}
       {...props} />)
   );
-})
+}
 Button.displayName = "Button"
+Button.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  asChild: PropTypes.bool,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
 
-export { Button, buttonVariants }
+export { Button }

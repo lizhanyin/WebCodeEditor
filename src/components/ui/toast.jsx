@@ -1,4 +1,4 @@
-import * as React from "react"
+import PropTypes from 'prop-types';
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva } from "class-variance-authority";
 import { X } from "lucide-react"
@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 
 const ToastProvider = ToastPrimitives.Provider
 
-const ToastViewport = React.forwardRef(({ className, ...props }, ref) => (
+const ToastViewport = ({ className, ref, ...props }) => (
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
@@ -15,7 +15,7 @@ const ToastViewport = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
-))
+);
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName
 
 const toastVariants = cva(
@@ -32,19 +32,19 @@ const toastVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
-const Toast = React.forwardRef(({ className, variant, ...props }, ref) => {
+const Toast = ({ className, variant, ref, ...props }) => {
   return (
     (<ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props} />)
   );
-})
+};
 Toast.displayName = ToastPrimitives.Root.displayName
 
-const ToastAction = React.forwardRef(({ className, ...props }, ref) => (
+const ToastAction = ({ className, ref, ...props }) => (
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
@@ -52,10 +52,10 @@ const ToastAction = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
-))
+);
 ToastAction.displayName = ToastPrimitives.Action.displayName
 
-const ToastClose = React.forwardRef(({ className, ...props }, ref) => (
+const ToastClose = ({ className, ref, ...props }) => (
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
@@ -66,20 +66,70 @@ const ToastClose = React.forwardRef(({ className, ...props }, ref) => (
     {...props}>
     <X className="h-4 w-4" />
   </ToastPrimitives.Close>
-))
+);
 ToastClose.displayName = ToastPrimitives.Close.displayName
 
-const ToastTitle = React.forwardRef(({ className, ...props }, ref) => (
+const ToastTitle = ({ className, ref, ...props }) => (
   <ToastPrimitives.Title
     ref={ref}
     className={cn("text-sm font-semibold [&+div]:text-xs", className)}
     {...props} />
-))
+);
 ToastTitle.displayName = ToastPrimitives.Title.displayName
 
-const ToastDescription = React.forwardRef(({ className, ...props }, ref) => (
+const ToastDescription = ({ className, ref, ...props }) => (
   <ToastPrimitives.Description ref={ref} className={cn("text-sm opacity-90", className)} {...props} />
-))
+);
 ToastDescription.displayName = ToastPrimitives.Description.displayName
 
 export { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose, ToastAction };
+
+
+ToastViewport.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+Toast.propTypes = {
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+ToastAction.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+ToastClose.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+ToastTitle.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
+
+ToastDescription.propTypes = {
+  className: PropTypes.string,
+  ref: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+};
