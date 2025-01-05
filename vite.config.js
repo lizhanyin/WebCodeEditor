@@ -1,8 +1,11 @@
-import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from 'url';
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
 import { VitePWA } from 'vite-plugin-pwa';
 import Inspect from 'vite-plugin-inspect';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   base: "/WebCodeEditor/",

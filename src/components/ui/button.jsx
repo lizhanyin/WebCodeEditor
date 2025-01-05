@@ -34,25 +34,26 @@ const buttonVariants = cva(
   }
 )
 
-const Button = ({ className, variant, size, asChild = false, ref, ...props }) => {
+const Button = ({ref, className, variant, size, asChild = false, ...props}) => {
   const Comp = asChild ? Slot : "button"
   return (
-    (<Comp
+    <Comp
       className={cn(buttonVariants({ variant, size, className }))}
       ref={ref}
-      {...props} />)
+      {...props} />
   );
 }
 Button.displayName = "Button"
+
+export { Button }
+
 Button.propTypes = {
-  className: PropTypes.string,
-  variant: PropTypes.string,
-  size: PropTypes.string,
   asChild: PropTypes.bool,
   ref: PropTypes.oneOfType([
     PropTypes.func, 
     PropTypes.shape({ current: PropTypes.instanceOf(Element) })
   ]),
+  className: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
 };
-
-export { Button }

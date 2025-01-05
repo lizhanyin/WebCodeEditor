@@ -16,8 +16,7 @@ const DropdownMenuSub = DropdownMenuPrimitive.Sub
 
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
-
-const DropdownMenuSubTrigger = ({ className, inset, children, ref, ...props }) => (
+const DropdownMenuSubTrigger = ({ref, className, inset, children, ...props}) => (
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
@@ -29,11 +28,10 @@ const DropdownMenuSubTrigger = ({ className, inset, children, ref, ...props }) =
     {children}
     <ChevronRight className="ml-auto" />
   </DropdownMenuPrimitive.SubTrigger>
-);
-DropdownMenuSubTrigger.displayName =
-  DropdownMenuPrimitive.SubTrigger.displayName
+)
+DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName
 
-const DropdownMenuSubContent = ({ className, ref, ...props }) => (
+const DropdownMenuSubContent = ({ref, className, ...props}) => (
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cn(
@@ -41,11 +39,10 @@ const DropdownMenuSubContent = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
-DropdownMenuSubContent.displayName =
-  DropdownMenuPrimitive.SubContent.displayName
+)
+DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName
 
-const DropdownMenuContent = ({ className, sideOffset = 4, ref, ...props }) => (
+const DropdownMenuContent = ({ref, className, sideOffset = 4, ...props}) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content
       ref={ref}
@@ -57,10 +54,10 @@ const DropdownMenuContent = ({ className, sideOffset = 4, ref, ...props }) => (
       )}
       {...props} />
   </DropdownMenuPrimitive.Portal>
-);
+)
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 
-const DropdownMenuItem = ({ className, inset, ref, ...props }) => (
+const DropdownMenuItem = ({ref, className, inset, ...props}) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
@@ -69,10 +66,10 @@ const DropdownMenuItem = ({ className, inset, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
 
-const DropdownMenuCheckboxItem = ({ className, children, checked, ref, ...props }) => (
+const DropdownMenuCheckboxItem = ({ref, className, children, checked, ...props}) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
@@ -88,11 +85,10 @@ const DropdownMenuCheckboxItem = ({ className, children, checked, ref, ...props 
     </span>
     {children}
   </DropdownMenuPrimitive.CheckboxItem>
-);
-DropdownMenuCheckboxItem.displayName =
-  DropdownMenuPrimitive.CheckboxItem.displayName
+)
+DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displayName
 
-const DropdownMenuRadioItem = ({ className, children, ref, ...props }) => (
+const DropdownMenuRadioItem = ({ref, className, children, ...props}) => (
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
@@ -107,29 +103,26 @@ const DropdownMenuRadioItem = ({ className, children, ref, ...props }) => (
     </span>
     {children}
   </DropdownMenuPrimitive.RadioItem>
-);
+)
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName
 
-const DropdownMenuLabel = ({ className, inset, ref, ...props }) => (
+const DropdownMenuLabel = ({ref, className, inset, ...props}) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className)}
     {...props} />
-);
+)
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
 
-const DropdownMenuSeparator = ({ className, ref, ...props }) => (
+const DropdownMenuSeparator = ({ref, className, ...props}) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props} />
-);
+)
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
-const DropdownMenuShortcut = ({
-  className,
-  ...props
-}) => {
+const DropdownMenuShortcut = ({className, ...props}) => {
   return (
     (<span
       className={cn("ml-auto text-xs tracking-widest opacity-60", className)}

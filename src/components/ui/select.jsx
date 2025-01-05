@@ -10,8 +10,7 @@ const SelectGroup = SelectPrimitive.Group
 
 const SelectValue = SelectPrimitive.Value
 
-
-const SelectTrigger = ({ className, children, ref, ...props }) => (
+const SelectTrigger = ({ref, className, children, ...props}) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -24,31 +23,30 @@ const SelectTrigger = ({ className, children, ref, ...props }) => (
       <ChevronDown className="h-4 w-4 opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
-);
+)
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
-const SelectScrollUpButton = ({ className, ref, ...props }) => (
+const SelectScrollUpButton = ({ref, className, ...props}) => (
   <SelectPrimitive.ScrollUpButton
     ref={ref}
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}>
     <ChevronUp className="h-4 w-4" />
   </SelectPrimitive.ScrollUpButton>
-);
+)
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
 
-const SelectScrollDownButton = ({ className, ref, ...props }) => (
+const SelectScrollDownButton = ({ref, className, ...props}) => (
   <SelectPrimitive.ScrollDownButton
     ref={ref}
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}>
     <ChevronDown className="h-4 w-4" />
   </SelectPrimitive.ScrollDownButton>
-);
-SelectScrollDownButton.displayName =
-  SelectPrimitive.ScrollDownButton.displayName
+)
+SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName
 
-const SelectContent = ({ className, children, position = "popper", ref, ...props }) => (
+const SelectContent = ({ref, className, children, position = "popper", ...props}) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       ref={ref}
@@ -69,18 +67,18 @@ const SelectContent = ({ className, children, position = "popper", ref, ...props
       <SelectScrollDownButton />
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
-);
+)
 SelectContent.displayName = SelectPrimitive.Content.displayName
 
-const SelectLabel = ({ className, ref, ...props }) => (
+const SelectLabel = ({ref, className, ...props}) => (
   <SelectPrimitive.Label
     ref={ref}
     className={cn("px-2 py-1.5 text-sm font-semibold", className)}
     {...props} />
-);
+)
 SelectLabel.displayName = SelectPrimitive.Label.displayName
 
-const SelectItem = ({ className, children, ref, ...props }) => (
+const SelectItem = ({ref, className, children, ...props}) => (
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
@@ -95,15 +93,15 @@ const SelectItem = ({ className, children, ref, ...props }) => (
     </span>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
-);
+)
 SelectItem.displayName = SelectPrimitive.Item.displayName
 
-const SelectSeparator = ({ className, ref, ...props }) => (
+const SelectSeparator = ({ref, className, ...props}) => (
   <SelectPrimitive.Separator
     ref={ref}
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props} />
-);
+)
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName
 
 export {
@@ -118,7 +116,6 @@ export {
   SelectScrollUpButton,
   SelectScrollDownButton,
 }
-
 
 SelectTrigger.propTypes = {
   className: PropTypes.string,

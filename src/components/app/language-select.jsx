@@ -13,8 +13,7 @@ export function LanguageSelect({ language, setLanguage, languageList, setValue, 
     if(language){
       setValue(localStorage.getItem(language) || codeSnippets[language] || "");
     }
-  }, [language, codeSnippets, setValue]);
-  
+  }, [language]);
   return (
     <Select defaultValue={language} onValueChange={(value) => {
       setLanguage(value)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { runCode } from "@/utils/run-code";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -17,10 +17,10 @@ export function CodeRunner({ language, version, data }){
   const { toast } = useToast();
   
   useEffect(() => {
-    if(language && version && data){
+    if(language&&version&&data){
       runCode(language, version, data, setResult);
     }
-  }, [data, language, version]);
+  }, []);
   
   useEffect(() => {
     if(result.error){
@@ -31,7 +31,7 @@ export function CodeRunner({ language, version, data }){
     } else if (result.stderr){
       setError(true);
     }
-  }, [result, toast]);
+  }, [result]);
   
   return(
     <Card className="min-h-[75vh]">
@@ -53,4 +53,4 @@ CodeRunner.propTypes = {
   language: PropTypes.string.isRequired,
   version: PropTypes.string.isRequired,
   data: PropTypes.string.isRequired,
-}; 
+};

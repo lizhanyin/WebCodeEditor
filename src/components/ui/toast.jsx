@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 
 const ToastProvider = ToastPrimitives.Provider
 
-const ToastViewport = ({ className, ref, ...props }) => (
+const ToastViewport = ({ref, className, ...props}) => (
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
@@ -15,7 +15,7 @@ const ToastViewport = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName
 
 const toastVariants = cva(
@@ -32,19 +32,19 @@ const toastVariants = cva(
       variant: "default",
     },
   }
-);
+)
 
-const Toast = ({ className, variant, ref, ...props }) => {
+const Toast = ({ref, className, variant, ...props}) => {
   return (
     (<ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props} />)
   );
-};
+}
 Toast.displayName = ToastPrimitives.Root.displayName
 
-const ToastAction = ({ className, ref, ...props }) => (
+const ToastAction = ({ref, className, ...props}) => (
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
@@ -52,10 +52,10 @@ const ToastAction = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 ToastAction.displayName = ToastPrimitives.Action.displayName
 
-const ToastClose = ({ className, ref, ...props }) => (
+const ToastClose = ({ref, className, ...props}) => (
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
@@ -66,24 +66,23 @@ const ToastClose = ({ className, ref, ...props }) => (
     {...props}>
     <X className="h-4 w-4" />
   </ToastPrimitives.Close>
-);
+)
 ToastClose.displayName = ToastPrimitives.Close.displayName
 
-const ToastTitle = ({ className, ref, ...props }) => (
+const ToastTitle = ({ref, className, ...props}) => (
   <ToastPrimitives.Title
     ref={ref}
     className={cn("text-sm font-semibold [&+div]:text-xs", className)}
     {...props} />
-);
+)
 ToastTitle.displayName = ToastPrimitives.Title.displayName
 
-const ToastDescription = ({ className, ref, ...props }) => (
+const ToastDescription = ({ref, className, ...props}) => (
   <ToastPrimitives.Description ref={ref} className={cn("text-sm opacity-90", className)} {...props} />
-);
+)
 ToastDescription.displayName = ToastPrimitives.Description.displayName
 
 export { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose, ToastAction };
-
 
 ToastViewport.propTypes = {
   className: PropTypes.string,

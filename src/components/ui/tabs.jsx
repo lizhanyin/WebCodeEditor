@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import * as TabsPrimitive from "@radix-ui/react-tabs"
+
 import { cn } from "@/lib/utils"
 
 const Tabs = TabsPrimitive.Root
 
-const TabsList = ({ className, ref, ...props }) => (
+const TabsList = ({ref, className, ...props}) => (
   <TabsPrimitive.List
     ref={ref}
     className={cn(
@@ -12,10 +13,10 @@ const TabsList = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 TabsList.displayName = TabsPrimitive.List.displayName
 
-const TabsTrigger = ({ className, ref, ...props }) => (
+const TabsTrigger = ({ref, className, ...props}) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -23,10 +24,10 @@ const TabsTrigger = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
-const TabsContent = ({ className, ref, ...props }) => (
+const TabsContent = ({ref, className, ...props}) => (
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
@@ -34,7 +35,7 @@ const TabsContent = ({ className, ref, ...props }) => (
       className
     )}
     {...props} />
-);
+)
 TabsContent.displayName = TabsPrimitive.Content.displayName
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }

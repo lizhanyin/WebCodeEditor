@@ -1,14 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import PropTypes from 'prop-types';
+import { ThemeProviderContext } from "@/hooks/use-theme"
 
-const initialState = {
-  theme: "system",
-  setTheme: () => null,
-}
-
-const ThemeProviderContext = createContext(initialState)
-
-function ThemeProvider({
+export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "vite-ui-theme",
@@ -35,7 +29,7 @@ function ThemeProvider({
     }
 
     root.classList.add(theme)
-  }, [storageKey, theme])
+  }, [theme])
 
   const value = {
     theme,
@@ -46,22 +40,11 @@ function ThemeProvider({
   }
 
   return (
-    <ThemeProviderContext.Provider {...props} value={value}>
+    (<ThemeProviderContext {...props} value={value}>
       {children}
-    </ThemeProviderContext.Provider>
-  )
+    </ThemeProviderContext>)
+  );
 }
-
-const useTheme = () => {
-  const context = useContext(ThemeProviderContext)
-
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider")
-
-  return context
-}
-
-export { ThemeProvider, useTheme }
 
 ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,

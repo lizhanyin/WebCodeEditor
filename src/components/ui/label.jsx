@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { cva } from "class-variance-authority";
 
@@ -8,10 +8,12 @@ const labelVariants = cva(
   "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 )
 
-const Label = ({ className, ref, ...props }) => (
+const Label = ({ref, className, ...props}) => (
   <LabelPrimitive.Root ref={ref} className={cn(labelVariants(), className)} {...props} />
-);
+)
 Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
 
 Label.propTypes = {
   className: PropTypes.string,
@@ -20,5 +22,3 @@ Label.propTypes = {
     PropTypes.shape({ current: PropTypes.instanceOf(Element) })
   ]),
 };
-
-export { Label }
