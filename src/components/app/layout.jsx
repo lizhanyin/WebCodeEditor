@@ -2,10 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import PropTypes from 'prop-types';
 // import { fontSans } from "@/lib/fonts"
 
-import { EditorComponent } from "@/components/app/editor";
-import { LanguageSelect } from "@/components/app/language-select";
-import { CodeRunner } from "@/components/app/code-runner";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CodeRunner, EditorComponent, LanguageSelect } from "@/components/app";
+import { Container, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { supportedLanguages } from "@/utils/monaco-supported-languages";
 import { codeSnippets } from "@/utils/hello-world";
 import { fetchRuntimes } from "@/utils/fetch-runtimes";
@@ -24,11 +22,11 @@ export function RootLayout() {
   }, []);
 
   return (
-    <>
-      <section className="w-11/12 my-2 flex justify-between items-center gap-1">
+    <Container className="flex-col flex-1">
+      <section className="w-full my-2 flex justify-between items-center gap-1">
         <LanguageSelect language={language} setLanguage={setLanguage} languageList={languageList} setValue={setValue} codeSnippets={codeSnippets} />
       </section>
-      <Tabs defaultValue="editor" className="w-[90vw]">
+      <Tabs defaultValue="editor" className="w-full h-full">
         <TabsList>
           <TabsTrigger value="editor">Editor</TabsTrigger>
           <TabsTrigger value="output">Run Code</TabsTrigger>
@@ -40,7 +38,7 @@ export function RootLayout() {
         <CodeRunner data={value} language={language} version={languageList.find(x => x.language === language)?.version || ""} />
         </TabsContent>
       </Tabs>
-    </>
+    </Container>
   )
 }
 

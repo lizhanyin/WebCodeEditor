@@ -10,12 +10,12 @@ function App() {
   return (
     <BrowserRouter basename="/">
       <main className={cn(
-        "min-h-screen bg-background font-sans antialiased",
+        "flex flex-col min-h-screen bg-background font-sans antialiased gap-1",
         // min-h-full p-3 gap-1 flex flex-col
         // fontSans.variable
       )}>
         <MainHeader />
-        <RootLayout/>
+        <RootLayout />
         
       </main>
     </BrowserRouter>

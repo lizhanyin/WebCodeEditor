@@ -9,7 +9,7 @@ import { buttonVariants } from "@/lib/utils"
 export function MainHeader() {
   return (
     <header className="bg-background sticky top-0 z-40 w-full border-b pl-2 pr-2">
-      <div className="container flex h-16 max-w-full items-center space-x-4 sm:justify-between sm:space-x-0">
+      <div className="container flex h-14 max-w-full items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">

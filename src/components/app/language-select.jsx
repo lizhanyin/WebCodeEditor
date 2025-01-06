@@ -6,7 +6,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/components/ui";
 
 export function LanguageSelect({ language, setLanguage, languageList, setValue, codeSnippets }) {
   useEffect(() => {

@@ -1,11 +1,12 @@
 import { Icons } from "@/components/icons"
-import { Button } from "@/components/ui/button"
-import {
+import { 
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+ } from "@/components/ui"
+
 import { useTheme } from "@/hooks/use-theme"
 
 export function ThemeToggle() {
