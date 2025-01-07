@@ -11,8 +11,8 @@ export function EditorComponent({ value, setValue, language, editorRef }){
   return(
     <>
       <Editor
-        className="rounded-md my-2 break-words whitespace-pre-wrap"
-        height="75vh"
+        className="rounded-md break-words whitespace-pre-wrap"
+        height="calc(100vh - 175px)"
         theme={(theme === "dark" || theme === "system") ? "vs-dark" : "light"}
         onMount={onMount}
         value={value}

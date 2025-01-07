@@ -34,7 +34,8 @@ export function CodeRunner({ language, version, data }){
   }, [result]);
   
   return(
-    <Card className="min-h-[75vh]">
+    // className="min-h-[85vh]"
+    <Card style={{height: "calc(100vh - 175px)"}}>
       <CardHeader>
         <CardTitle>{language.toUpperCase()}</CardTitle>
         <CardDescription>Code Output</CardDescription>

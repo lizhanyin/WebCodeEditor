@@ -26,7 +26,7 @@ export function RootLayout() {
       <section className="w-full my-2 flex justify-between items-center gap-1">
         <LanguageSelect language={language} setLanguage={setLanguage} languageList={languageList} setValue={setValue} codeSnippets={codeSnippets} />
       </section>
-      <Tabs defaultValue="editor" className="w-full h-full">
+      <Tabs defaultValue="editor" className="w-full">
         <TabsList>
           <TabsTrigger value="editor">Editor</TabsTrigger>
           <TabsTrigger value="output">Run Code</TabsTrigger>
@@ -35,7 +35,7 @@ export function RootLayout() {
           <EditorComponent value={value} setValue={setValue} editorRef={editorRef} language={language}/>
         </TabsContent>
         <TabsContent value="output">
-        <CodeRunner data={value} language={language} version={languageList.find(x => x.language === language)?.version || ""} />
+          <CodeRunner data={value} language={language} version={languageList.find(x => x.language === language)?.version || ""} />
         </TabsContent>
       </Tabs>
     </Container>
