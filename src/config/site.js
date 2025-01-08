@@ -8,6 +8,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/lizhanyin/wc3dataHost"
+    github: "https://github.com/lizhanyin/WebCodeEditor"
   },
 }
